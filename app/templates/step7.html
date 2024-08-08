@@ -1,0 +1,49 @@
+```html
+{% extends "base.html" %}
+
+{% block content %}
+<div class="step7">
+    <h2>Final Checks</h2>
+    <form id="finalCheckForm">
+        <h3>Material Pulled</h3>
+        <table>
+            <tr>
+                <th>Material ID</th>
+                <th>Size</th>
+                <th>Shape</th>
+                <th>Amend</th>
+            </tr>
+            {% for material in finalCheck.materialList %}
+            <tr>
+                <td>{{ material.id }}</td>
+                <td>{{ material.size }}</td>
+                <td>{{ material.shape }}</td>
+                <td><input type="text" name="amend_material_{{ material.id }}"></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h3>Parts Run</h3>
+        <table>
+            <tr>
+                <th>Part ID</th>
+                <th>Status</th>
+                <th>Amend</th>
+            </tr>
+            {% for part in finalCheck.partStatus %}
+            <tr>
+                <td>{{ part.id }}</td>
+                <td>{{ part.status }}</td>
+                <td><input type="text" name="amend_part_{{ part.id }}"></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h3>Check Remaining Material Back In</h3>
+        <input type="text" id="remainingMaterial" name="remainingMaterial">
+
+        <button type="button" id="jobSubmitButton">Submit Job</button>
+    </form>
+</div>
+{% endblock %}
+```

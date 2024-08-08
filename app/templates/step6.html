@@ -1,0 +1,30 @@
+```html
+{% extends "base.html" %}
+
+{% block content %}
+<div class="step6">
+    <h2>Step 6: AQL / Inspection Audits</h2>
+    <p>Like FAI, a simple inspection report form will come up for every "x" PC as set by job or can be manually opened by the user.</p>
+    <form id="inspectionForm" action="{{ url_for('fillInspectionReport') }}" method="post">
+        {{ inspectionReport.hidden_tag() }}
+        <div class="form-group">
+            <label for="dimension">Dimension</label>
+            <input type="text" class="form-control" id="dimension" name="dimension" required>
+        </div>
+        <div class="form-group">
+            <label for="measurement">Measurement</label>
+            <input type="text" class="form-control" id="measurement" name="measurement" required>
+        </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select class="form-control" id="status" name="status" required>
+                <option value="Good">Good</option>
+                <option value="Quarantine">Quarantine</option>
+                <option value="Scrap">Scrap</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
+```

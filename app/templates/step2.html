@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Step 2: Pull Tools</h2>
+    <form id="toolChecklist" action="{{ url_for('pullTools') }}" method="post">
+        {% for tool in toolList %}
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="{{ tool.id }}" id="tool{{ tool.id }}">
+            <label class="form-check-label" for="tool{{ tool.id }}">
+                {{ tool.name }}
+            </label>
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

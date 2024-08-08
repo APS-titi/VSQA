@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="step3">
+    <h2>Step 3: Setup Machine</h2>
+    <p>Please use the timer below to record how long the setup takes.</p>
+    <div id="setupTimer">
+        <button id="startButton" onclick="startTimer()">Start</button>
+        <button id="pauseButton" onclick="pauseTimer()">Pause</button>
+        <button id="resetButton" onclick="resetTimer()">Reset</button>
+        <p id="timerDisplay">00:00:00</p>
+    </div>
+    <button id="nextStepButton" onclick="nextStep()">Next Step</button>
+</div>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
