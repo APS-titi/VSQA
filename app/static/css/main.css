@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#jobSelect {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#materialInput, .toolChecklist, #setupTimer, #runTimer, .partStatusButtons, #inspectionForm, #finalCheckForm {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#jobSubmitButton {
+    background-color: #28a745;
+}
+
+.timer {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.status-good {
+    color: #28a745;
+}
+
+.status-quarantine {
+    color: #ffc107;
+}
+
+.status-scrap {
+    color: #dc3545;
+}
+
+.final-checks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.final-checks input {
+    width: 45%;
+}

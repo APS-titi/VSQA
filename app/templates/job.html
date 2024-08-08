@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Job Details</h1>
+    <div class="job-info">
+        <p><strong>Project:</strong> {{ activeJob.project }}</p>
+        <p><strong>Part #:</strong> {{ activeJob.part_number }}</p>
+        <p><strong>Rev. #:</strong> {{ activeJob.revision_number }}</p>
+        <p><strong>Material:</strong> {{ activeJob.material }}</p>
+        <p><strong>Part Name:</strong> {{ activeJob.part_name }}</p>
+        <p><strong>Status:</strong> {{ activeJob.status }}</p>
+    </div>
+    <div class="job-image">
+        <img src="{{ url_for('static', filename='images/' + activeJob.image) }}" alt="Job Image">
+    </div>
+    <div class="steps">
+        <a href="{{ url_for('step1') }}" class="btn btn-primary">Step 1: Pull Material</a>
+        <a href="{{ url_for('step2') }}" class="btn btn-primary">Step 2: Pull Tools</a>
+        <a href="{{ url_for('step3') }}" class="btn btn-primary">Step 3: Setup Machine</a>
+        <a href="{{ url_for('step4') }}" class="btn btn-primary">Step 4: FAI</a>
+        <a href="{{ url_for('step5') }}" class="btn btn-primary">Step 5: Run</a>
+        <a href="{{ url_for('step6') }}" class="btn btn-primary">Step 6: AQL / Inspection Audits</a>
+        <a href="{{ url_for('step7') }}" class="btn btn-primary">Step 7: Final Checks</a>
+    </div>
+</div>
+{% endblock %}

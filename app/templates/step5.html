@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="step5">
+    <h2>Step 5: Run</h2>
+    <p>Use the stopwatch timer to record the time it takes per part. Click on the status of the part once done.</p>
+
+    <div id="runTimer">
+        <h3>Run Timer</h3>
+        <button onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick="resetTimer()">Reset</button>
+        <p id="timerDisplay">00:00:00</p>
+    </div>
+
+    <div id="partStatusButtons">
+        <h3>Part Status</h3>
+        <button onclick="recordStatus('Good')">Good</button>
+        <button onclick="recordStatus('Quarantine')">Quarantine</button>
+        <button onclick="recordStatus('Scrap')">Scrap</button>
+    </div>
+
+    <div id="runResults">
+        <h3>Run Results</h3>
+        <p id="runTime">Time: 00:00:00</p>
+        <p id="partStatus">Status: N/A</p>
+    </div>
+
+    <button onclick="nextStep()">Next Step</button>
+</div>
+{% endblock %}

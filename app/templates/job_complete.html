@@ -1,0 +1,42 @@
+```html
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Job Complete</h2>
+    <p>Job: {{ activeJob }}</p>
+    <p>Status: Complete</p>
+
+    <h3>Final Checks</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Material Pulled</th>
+                <th>Parts Run</th>
+                <th>Status</th>
+                <th>Amendments</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for check in finalCheck %}
+            <tr>
+                <td>{{ check.material }}</td>
+                <td>{{ check.parts_run }}</td>
+                <td>{{ check.status }}</td>
+                <td>{{ check.amendments }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Remaining Material</h3>
+    <form id="finalCheckForm">
+        <div class="form-group">
+            <label for="remainingMaterial">Remaining Material</label>
+            <input type="text" class="form-control" id="remainingMaterial" placeholder="Enter remaining material">
+        </div>
+        <button type="submit" class="btn btn-primary" id="jobSubmitButton">Confirm</button>
+    </form>
+</div>
+{% endblock %}
+```

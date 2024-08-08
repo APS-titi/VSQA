@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="step1">
+    <h2>Step 1: Pull Material</h2>
+    <form id="materialInput" action="{{ url_for('pullMaterial') }}" method="post">
+        <div class="form-group">
+            <label for="materialId">Material ID:</label>
+            <input type="text" class="form-control" id="materialId" name="materialId" required>
+        </div>
+        <div class="form-group">
+            <label for="materialLocation">Material Location:</label>
+            <input type="text" class="form-control" id="materialLocation" name="materialLocation" required>
+        </div>
+        <div class="form-group">
+            <label for="materialSize">Material Size:</label>
+            <input type="text" class="form-control" id="materialSize" name="materialSize" required>
+        </div>
+        <div class="form-group">
+            <label for="materialShape">Material Shape:</label>
+            <input type="text" class="form-control" id="materialShape" name="materialShape" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Pull Material</button>
+    </form>
+</div>
+{% endblock %}
